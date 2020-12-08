@@ -19,7 +19,8 @@ The forward (or leading) P/E uses future earnings guidance rather than trailing 
 
 To determine the P/E value, one simply must divide the current stock price by the earnings per share (EPS).
 
-![](image/formula.png)
+<p float="left">
+    <img src="image/formula.png" width="380" height="190" />
 
 The current stock price (P) can be gleaned by plugging a stock’s ticker symbol into any finance website, and this concrete value reflects what investors must currently pay for a stock.
 
