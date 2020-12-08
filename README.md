@@ -1,4 +1,4 @@
-## 1. What is the P/E Ratio?
+## 1. What is the P/E Ratio ?
 
 The price-to-earnings ratio (P/E ratio) is the ratio for valuing a company that measures its current share price relative to its per-share earnings (EPS). The price-to-earnings ratio is also sometimes known as the price multiple or the earnings multiple.
 
@@ -15,7 +15,7 @@ The trailing P/E relies on past performance by dividing the current share price 
 The forward (or leading) P/E uses future earnings guidance rather than trailing figures. Sometimes called "estimated price to earnings," this forward-looking indicator is useful for comparing current earnings to future earnings and helps provide a clearer picture of what earnings will look like – without changes and other accounting adjustments.
 
 
-## 2. P/E Ratio Formula and Calculation
+## 2. How to calculate P/E Ratio ?
 
 To determine the P/E value, one simply must divide the current stock price by the earnings per share (EPS).
 
@@ -26,4 +26,9 @@ The current stock price (P) can be gleaned by plugging a stock’s ticker symbol
 
 EPS comes in two main varieties. The first is a metric listed in the fundamentals section of most finance sites; with the notation "P/E (TTM)," where “TTM” is a Wall Street acronym for “trailing 12 months.” This number signals the company's performance over the past 12 months. The second type of EPS is found in a company's earnings release, which often provides EPS guidance. This is the company's best-educated guess of what it expects to earn in the future.
 
+## 3. What does P/E Ratio tell you ?
+
+The price-to-earnings ratio or P/E is one of the most widely-used stock analysis tools used by investors and analysts for determining stock valuation. In addition to showing whether a company's stock price is overvalued or undervalued, the P/E can reveal how a stock's valuation compares to its industry group or a benchmark like the S&P 500 Index.
+
+The P/E ratio shows what the market is willing to pay today for a stock based on its past or future earnings. A high P/E could mean that a stock's price is high relative to earnings and possibly overvalued. Conversely, a low P/E might indicate that the current stock price is low relative to earnings. 
 
