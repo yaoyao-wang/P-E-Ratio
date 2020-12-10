@@ -59,7 +59,7 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
 
 (3) We calculate the P/E Ratio by dividing the current close price by the earnings per share.
 
-(11) That’s how we calculate the P/E Ratio with the most intuitive way.
+(4) That’s how we calculate the P/E Ratio with the most intuitive way.
 
 
 ### · Step Three: Plotting
