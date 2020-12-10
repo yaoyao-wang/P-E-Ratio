@@ -33,3 +33,56 @@ The price-to-earnings ratio or P/E is one of the most widely-used stock analysis
 The P/E ratio shows what the market is willing to pay today for a stock based on its past or future earnings. A high P/E could mean that a stock's price is high relative to earnings and possibly overvalued. Conversely, a low P/E might indicate that the current stock price is low relative to earnings. 
 
 A high P/E suggests that investors are expecting higher earnings growth in the future compared to companies with a lower P/E. A low P/E can indicate either that a company may currently be undervalued or that the company is doing exceptionally well relative to its past trends. When a company has no earnings or is posting losses, in both cases P/E will be expressed as “N/A.” Though it is possible to calculate a negative P/E, this is not the common convention.
+
+## 3. Tradingview Pine Script
+
+### · Step One: Initial Setting
+
+    //@version=4
+    study("SPY P/E Ratio", overlay = false)
+
+(1) Since we are not using the P/E Ratio as a tool for our stock trading, we start with the study function instead of strategy.
+
+(2) With study function, we have one parameters to set up.
+
+(3) We set overlay to be false to place the P/E Ratio graph on a seperate window
+
+### · Step Two: Parameter Setting
+
+    earnings = security("ESD_FACTSET:AMEX;SPY" +  "EARNINGS", "D", open, lookahead=true) 
+
+    eps=0.0
+    for i=0 to 3
+        eps := eps + earnings[i]
+
+    pe = close/eps
+    
+(1) We first locate all S&P 500 earnings through the years
+
+(2) The first line will give us all historical dividends that SPY has paid out
+
+(3) On TradingView, the value of dividends on dates that the stock didn’t pay a dividend will be the last dividend paid.
+
+(4) For example, one stock pays a 1 dollar dividend a week ago and nothing since then.
+
+(5) If I look at stock’s dividend of today, it will also have the value of 1 dollar until the next dividend is paid out.
+
+(6) Because SPY is an ETF that pays out dividends regularly on the last day of each quarter, we can easily calculate the yearly dividend we receive by adding up the dividend value of today, the value of 64 days ago, the value of 127 days ago, and 190 days ago
+
+(7) Why the numbers here are not 0, 90, 180 and 270 days ago? Because TradingView only records prices and dividends on trading days, and there are only 252 trading days each year after deducting holidays and weekends
+
+(8) So we must be careful when choosing the correct dates.
+
+(9) Here, the variable yr-slash-div will give us the annual dividend of SPY on any single date.
+
+(10) Finally, we calculate the dividend yield by dividing the annual dividend by the day’s closing price and times 100 to get a percentage
+
+(11) That’s how we calculate the dividend yield with the most intuitive way
+
+
+### · Step Three: Plotting
+
+    plot(pe)
+
+(1) With an easy command, we plot out the P/E ratio we just calculated. The curve looks like the following:
+
