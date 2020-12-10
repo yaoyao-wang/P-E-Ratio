@@ -39,7 +39,7 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
 ### · Step One: Initial Setting
 
     //@version=4
-    study("SPY P/E Ratio", overlay = false)
+    study("P/E Ratio", overlay = false)
 
 (1) Since we are not using the P/E Ratio as a tool for our stock trading, we start with the study function instead of strategy.
 
@@ -49,13 +49,13 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
 
 ### · Step Two: Parameter Setting
    
-    eps = financial('ESD_FACTSET:AMEX;SPY', "EARNINGS_PER_SHARE", "TTM")
+    eps = financial(syminfo.tickerid, "EARNINGS_PER_SHARE", "TTM")
 
     pe = close/eps
     
-(1) We first locate all S&P 500 earning per share through the past 12 months.
+(1) We first locate all earning per share through the past 12 months.
 
-(2) The first line will give us all historical earnings that SPY has gained.
+(2) The first line will give us all historical earnings that a stock has gained.
 
 (3) We calculate the P/E Ratio by dividing the current close price by the earnings per share.
 
@@ -66,5 +66,7 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
 
     plot(pe)
 
-(1) With an easy command, we plot out the P/E ratio we just calculated.
+(1) With an easy command, we plot out the P/E ratio we just calculated. The curve looks like the following:
+
+![](image/aapl.png)
 
