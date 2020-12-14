@@ -18,7 +18,7 @@ pe_std_river_4 = pe_avg * eps - 2* pe_std
 
 //Step Three: Plotting
 plot(pe_avg_river, color = color.black) 
-plot(pe_std_river_1, color = color.blue)
-plot(pe_std_river_2, color = color.green)
-plot(pe_std_river_3, color = color.orange)
-plot(pe_std_river_4, color = color.red)
+plot(pe_std_river1, color = color.blue)
+plot(pe_std_river2, color = color.green)
+plot(pe_std_river3, color = color.orange)
+plot(pe_std_river4, color = color.red)
