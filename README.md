@@ -34,24 +34,31 @@ The P/E ratio shows what the market is willing to pay today for a stock based on
 
 A high P/E suggests that investors are expecting higher earnings growth in the future compared to companies with a lower P/E. A low P/E can indicate either that a company may currently be undervalued or that the company is doing exceptionally well relative to its past trends. When a company has no earnings or is posting losses, in both cases P/E will be expressed as “N/A.” Though it is possible to calculate a negative P/E, this is not the common convention.
 
-## 3. Tradingview Pine Script
+## 3. Tradingview Pine Script - P/E Ratio River
 
 ### · Step One: Initial Setting
 
     //@version=4
-    study("P/E Ratio", overlay = false)
+    study("P/E Ratio", overlay = true)
 
 (1) Since we are not using the P/E Ratio as a tool for our stock trading, we start with the study function instead of strategy.
 
 (2) With study function, we have one parameters to set up.
 
-(3) We set overlay to be false to place the P/E Ratio graph on a seperate window
+(3) We set overlay to be true to place the P/E Ratio graph in the same window.
 
 ### · Step Two: Parameter Setting
    
     eps = financial(syminfo.tickerid, "EARNINGS_PER_SHARE", "TTM")
-
     pe = close/eps
+    pe_avg = sma(pe, 200)
+    pe_std = stdev(pe, 200) 
+
+    pe_avg_river = pe_avg * eps 
+    pe_std_river_1 = pe_avg * eps + 1* pe_std
+    pe_std_river_2 = pe_avg * eps + 2 * pe_std
+    pe_std_river_3 = pe_avg * eps - 1* pe_std
+    pe_std_river_4 = pe_avg * eps - 2* pe_std
     
 (1) We first locate all earning per share through the past 12 months.
 
@@ -61,12 +68,32 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
 
 (4) That’s how we calculate the P/E Ratio with the most intuitive way.
 
+(5) "pe_avg equals sma pe and 200" means we calculate the simple moving average of the P/E Ratio for the last 200 days.
+
+(6) "pe_std equals stdev pe and 200" means we calculate the standard deviation of the P/E Ratio for the last 200 days.
+
+(7) Next, we set up values of five lines. 
+
+(8) "pe_avg_river equals pe_avg times eps" is how we calculate the first line by mulitple average P/E Ratio and earnings per share.
+
+(9) Similarly, we calculate the next four lines by add or minus one or two times the standard deviation of P/E ratio from average P/E ratio.
+
 
 ### · Step Three: Plotting
 
-    plot(pe)
+    plot(pe_avg_river, color = color.black) 
+    plot(pe_std_river1, color = color.blue)
+    plot(pe_std_river2, color = color.green)
+    plot(pe_std_river3, color = color.orange)
+    plot(pe_std_river4, color = color.red)
 
-(1) With an easy command, we plot out the P/E ratio we just calculated. The curve looks like the following:
+(1) Now let’s plot what we have just calculated. 
 
-![](image/aapl.png)
+(2) We first plot the pe_avg_river line. Plot brackets pe slash avg slash river comma color equals color dot black means we will be plotting pe_avg_river line in black.
+
+(3) Similarly, we plot pe_std_river1 line in blue, pe_std_river2 line in green, pe_std_river3 line in orange and pe_std_river4 line in red .
+
+The curve looks like the following:
+
+![](image/aapl_river.png)
 
