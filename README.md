@@ -34,7 +34,7 @@ The P/E ratio shows what the market is willing to pay today for a stock based on
 
 A high P/E suggests that investors are expecting higher earnings growth in the future compared to companies with a lower P/E. A low P/E can indicate either that a company may currently be undervalued or that the company is doing exceptionally well relative to its past trends. When a company has no earnings or is posting losses, in both cases P/E will be expressed as “N/A.” Though it is possible to calculate a negative P/E, this is not the common convention.
 
-## 3. Tradingview Pine Script - P/E Ratio River
+## 4. Tradingview Pine Script - P/E Ratio River
 
 ### · Step One: Initial Setting
 
