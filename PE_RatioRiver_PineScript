@@ -1,0 +1,24 @@
+//Step One: Initial Setting
+//@version=4
+study("P/E Ratio River", overlay = true)  //place the P/E Ratio graph in the same window
+
+//Step Two: Parameter Setting
+eps = financial(syminfo.tickerid, "EARNINGS_PER_SHARE", "TTM")  //locate all earning per share through the past 12 months
+
+pe = close/eps  //The P/E Ratio equals the current close price divide by the earnings per share
+
+pe_avg = sma(pe, 200)  //Calculate the simple moving average of the P/E Ratio for the last 200 days
+pe_std = stdev(pe, 200)  //Calculate the standard deviation of the P/E Ratio for the last 200 days
+
+pe_avg_river = pe_avg * eps 
+pe_std_river_1 = pe_avg * eps + 1* pe_std
+pe_std_river_2 = pe_avg * eps + 2 * pe_std
+pe_std_river_3 = pe_avg * eps - 1* pe_std
+pe_std_river_4 = pe_avg * eps - 2* pe_std
+
+//Step Three: Plotting
+plot(pe_avg_river, color = color.black) 
+plot(pe_std_river_1, color = color.blue)
+plot(pe_std_river_2, color = color.green)
+plot(pe_std_river_3, color = color.orange)
+plot(pe_std_river_4, color = color.red)
