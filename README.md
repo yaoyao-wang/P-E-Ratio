@@ -95,5 +95,5 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
 
 The curve looks like the following:
 
-![](image/appl_river.png)
+![](image/pe_ratio_river.png)
 
