@@ -55,10 +55,10 @@ A high P/E suggests that investors are expecting higher earnings growth in the f
     pe_std = stdev(pe, 200) 
 
     pe_avg_river = pe_avg * eps 
-    pe_std_river_1 = pe_avg * eps + 1* pe_std
-    pe_std_river_2 = pe_avg * eps + 2 * pe_std
-    pe_std_river_3 = pe_avg * eps - 1* pe_std
-    pe_std_river_4 = pe_avg * eps - 2* pe_std
+    pe_std_river1 = pe_avg * eps + 1* pe_std
+    pe_std_river2 = pe_avg * eps + 2 * pe_std
+    pe_std_river3 = pe_avg * eps - 1* pe_std
+    pe_std_river4 = pe_avg * eps - 2* pe_std
     
 (1) We first locate all earning per share through the past 12 months.
 
