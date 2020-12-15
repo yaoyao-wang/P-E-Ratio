@@ -11,10 +11,10 @@ pe_avg = sma(pe, 200)  //Calculate the simple moving average of the P/E Ratio fo
 pe_std = stdev(pe, 200)  //Calculate the standard deviation of the P/E Ratio for the last 200 days
 
 pe_avg_river = pe_avg * eps 
-pe_std_river_1 = pe_avg * eps + 1* pe_std
-pe_std_river_2 = pe_avg * eps + 2 * pe_std
-pe_std_river_3 = pe_avg * eps - 1* pe_std
-pe_std_river_4 = pe_avg * eps - 2* pe_std
+pe_std_river1 = pe_avg * eps + 1* pe_std
+pe_std_river2 = pe_avg * eps + 2 * pe_std
+pe_std_river3 = pe_avg * eps - 1* pe_std
+pe_std_river4 = pe_avg * eps - 2* pe_std
 
 //Step Three: Plotting
 plot(pe_avg_river, color = color.black) 
